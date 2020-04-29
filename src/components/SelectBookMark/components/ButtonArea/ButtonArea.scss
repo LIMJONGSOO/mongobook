@@ -1,0 +1,23 @@
+.button_area {
+  margin: 10px;
+  height: 40px;
+
+  .left {
+    float: left;
+  }
+  
+  .right {
+    float: right;
+  }
+
+  img {
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+
+    &.del {
+      height: 5px;
+      margin: 20px 5px;
+    }
+  }
+}

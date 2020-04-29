@@ -1,23 +1,27 @@
 import React, {Component} from 'react';
 import logo from 'assets/images/logo.png';
-import './App.scss';
+import './Main.scss';
+import SelectBookMark from '../SelectBookMark/SelectBookMark';
 
 class Main extends Component {
-  state = {users: []}
+  state = {
+    showSelectPage: false
+  }
 
-  conponentDidMount() {
-    fetch('/users')
-      .then(res => res.json())
-      .then(users => this.setState({users}));
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({showSelectPage: true});
+    }, 1000);
   }
   
   render() {
     return (
-      <div className="App">
-        <h1>Users</h1>
-        {this.state.users.map(user => 
-          <div key={user._id}>{user.name} {user.age}</div>
-        )}
+      <div className="main">
+        {!this.state.showSelectPage ?
+          <div className="main_page"><img className="logo" src={logo} alt="logo"></img></div>
+          :
+          <SelectBookMark />
+        }
       </div>
     )
   };
