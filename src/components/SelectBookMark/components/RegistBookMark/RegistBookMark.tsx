@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './RegistBookMark.scss';
-import { threadId } from 'worker_threads';
+const axios = require("axios");
+const cheerio = require("cheerio");
 
 type RegistBookMarkProps = {
   openRegistlayer:boolean;
@@ -26,6 +27,48 @@ class RegistBookMark extends Component<RegistBookMarkProps> {
       url:''
     };
   }
+
+  crawling() {
+    const url = 'https://www.naver.com';
+    this.getHtml(url)
+      .then(html => {
+        let ogDatas = {
+            title : '',
+            description: '',
+            image: ''
+        };
+        console.log(html);
+        const $ = cheerio.load(html);
+        const $bodyList = $("meta");
+
+        $bodyList.each((i: any,elem: any) => {
+            if(String($bodyList[i].attr('property')) === 'og:title') {
+                ogDatas.title = String($bodyList[i].attr('content'));
+            } else if(String($bodyList[i].attr('property')) === 'og:description') {
+                ogDatas.description = String($bodyList[i].attr('content'));
+            } else if(String($bodyList[i].attr('property')) === 'og:image') {
+                ogDatas.image = String($bodyList[i].attr('content'));
+            }
+        });
+
+        const data = ogDatas;
+        return data;
+      })
+      .then(res => console.log(res));
+  }
+
+  getHtml = async (url: string) => {
+    try {
+      let script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = url;
+      return script;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
 
   render() {
     return (
@@ -54,7 +97,7 @@ class RegistBookMark extends Component<RegistBookMarkProps> {
             </div>
             <div>
               <div className="layer_button" onClick={() => this.props.closeRegistLayer()}>취소</div>
-              <div className="layer_button" onClick={() => this.props.closeRegistLayer()}>저장</div>
+              <div className="layer_button" onClick={() => this.crawling()}>저장</div>
             </div>
           </div>
         }
