@@ -38,7 +38,7 @@ class RegistBookMark extends Component<RegistBookMarkProps> {
             image: ''
         };
         console.log(html);
-        const $ = cheerio.load(html);
+        const $ = cheerio.load(html.data);
         const $bodyList = $("meta");
 
         $bodyList.each((i: any,elem: any) => {
@@ -59,10 +59,7 @@ class RegistBookMark extends Component<RegistBookMarkProps> {
 
   getHtml = async (url: string) => {
     try {
-      let script = document.createElement("iframe");
-      script.src = url;
-      script.click();
-      return script;
+      return await axios.get("http://localhost:4000/api/board");
     } catch (error) {
       console.error(error);
     }
@@ -96,8 +93,6 @@ class RegistBookMark extends Component<RegistBookMarkProps> {
               <div className="data_value"><input type="text" disabled={this.state.type === 'folder'}/></div>
             </div>
             <div>
-              <iframe src="www.naver.com">test</iframe>
-              <link type="text/html" href="www.naver.com" />
               <div className="layer_button" onClick={() => this.props.closeRegistLayer()}>취소</div>
               <div className="layer_button" onClick={() => this.crawling()}>저장</div>
             </div>
