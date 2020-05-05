@@ -34,8 +34,10 @@
     "eslint-plugin-react": "7.19.0",
     "eslint-plugin-react-hooks": "^1.6.1",
     "file-loader": "4.3.0",
+    "fs": "^0.0.1-security",
     "fs-extra": "^8.1.0",
     "html-webpack-plugin": "4.0.0-beta.11",
+    "https": "^1.0.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",
     "jest-environment-jsdom-fourteen": "1.0.1",
@@ -45,6 +47,7 @@
     "mongoose": "^5.9.11",
     "node-sass": "^4.14.0",
     "optimize-css-assets-webpack-plugin": "5.0.3",
+    "path": "^0.12.7",
     "pnp-webpack-plugin": "1.6.4",
     "postcss-flexbugs-fixes": "4.1.0",
     "postcss-loader": "3.0.0",
@@ -77,7 +80,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -152,6 +157,8 @@
   "devDependencies": {
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.7",
+    "gh-pages": "^2.2.0",
     "sass-loader": "^7.1.0"
-  }
+  },
+  "homepage": "http://limjongsoo.github.io/mongobook"
 }

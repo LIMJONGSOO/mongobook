@@ -29,37 +29,14 @@ class RegistBookMark extends Component<RegistBookMarkProps> {
   }
 
   crawling() {
-    const url = 'https://www.naver.com';
+    const url = '';
     this.getHtml(url)
-      .then(html => {
-        let ogDatas = {
-            title : '',
-            description: '',
-            image: ''
-        };
-        console.log(html);
-        const $ = cheerio.load(html.data);
-        const $bodyList = $("meta");
-
-        $bodyList.each((i: any,elem: any) => {
-            if(String($bodyList[i].attr('property')) === 'og:title') {
-                ogDatas.title = String($bodyList[i].attr('content'));
-            } else if(String($bodyList[i].attr('property')) === 'og:description') {
-                ogDatas.description = String($bodyList[i].attr('content'));
-            } else if(String($bodyList[i].attr('property')) === 'og:image') {
-                ogDatas.image = String($bodyList[i].attr('content'));
-            }
-        });
-
-        const data = ogDatas;
-        return data;
-      })
       .then(res => console.log(res));
   }
 
   getHtml = async (url: string) => {
     try {
-      return await axios.get("http://localhost:4000/api/board");
+      return await axios.get("https://192.168.219.192:4000/api/board");
     } catch (error) {
       console.error(error);
     }
