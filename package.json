@@ -160,5 +160,5 @@
     "gh-pages": "^2.2.0",
     "sass-loader": "^7.1.0"
   },
-  "homepage": "http://limjongsoo.github.io/mongobook"
+  "homepage": "https://limjongsoo.github.io/mongobook"
 }
