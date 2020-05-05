@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/mongobook/static/css/main.cbb1a16c.chunk.css",
-    "main.js": "/mongobook/static/js/main.3ae4b8b7.chunk.js",
-    "main.js.map": "/mongobook/static/js/main.3ae4b8b7.chunk.js.map",
+    "main.js": "/mongobook/static/js/main.1d288e78.chunk.js",
+    "main.js.map": "/mongobook/static/js/main.1d288e78.chunk.js.map",
     "runtime-main.js": "/mongobook/static/js/runtime-main.9c1d5d49.js",
     "runtime-main.js.map": "/mongobook/static/js/runtime-main.9c1d5d49.js.map",
     "static/js/2.4784c32e.chunk.js": "/mongobook/static/js/2.4784c32e.chunk.js",
     "static/js/2.4784c32e.chunk.js.map": "/mongobook/static/js/2.4784c32e.chunk.js.map",
     "index.html": "/mongobook/index.html",
-    "precache-manifest.7141b61bf75b743f53be07704846667d.js": "/mongobook/precache-manifest.7141b61bf75b743f53be07704846667d.js",
+    "precache-manifest.5db2d8fabfafe20bc78303761683ed52.js": "/mongobook/precache-manifest.5db2d8fabfafe20bc78303761683ed52.js",
     "service-worker.js": "/mongobook/service-worker.js",
     "static/css/main.cbb1a16c.chunk.css.map": "/mongobook/static/css/main.cbb1a16c.chunk.css.map",
     "static/js/2.4784c32e.chunk.js.LICENSE.txt": "/mongobook/static/js/2.4784c32e.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.9c1d5d49.js",
     "static/js/2.4784c32e.chunk.js",
     "static/css/main.cbb1a16c.chunk.css",
-    "static/js/main.3ae4b8b7.chunk.js"
+    "static/js/main.1d288e78.chunk.js"
   ]
 }
