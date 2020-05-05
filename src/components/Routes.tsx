@@ -5,7 +5,7 @@ import Main from "./Main/Main";
 export default () => (
   <Router>
     <Switch>
-      <Route path="/" exact component={Main} />
+      <Route path="/mongobook" exact component={Main} />
       <Redirect from="*" to="/" />
     </Switch>
   </Router>
