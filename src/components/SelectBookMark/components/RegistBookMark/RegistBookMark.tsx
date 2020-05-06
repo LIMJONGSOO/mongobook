@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './RegistBookMark.scss';
-const axios = require("axios");
-const cheerio = require("cheerio");
+import axios from "axios";
+import cheerio from "cheerio";
 
 type RegistBookMarkProps = {
   openRegistlayer:boolean;
@@ -28,21 +28,13 @@ class RegistBookMark extends Component<RegistBookMarkProps> {
     };
   }
 
-  crawling() {
-    const url = '';
-    this.getHtml(url)
-      .then(res => console.log(res));
-  }
-
-  getHtml = async (url: string) => {
+  insertBookMark = async () => {
     try {
-      return await axios.get("https://192.168.219.192:4000/api/board");
+      return await axios.post("https://192.168.219.192:4000/api/board", {name: this.state.name, url: this.state.url});
     } catch (error) {
       console.error(error);
     }
-  };
-
-
+  }
 
   render() {
     return (
@@ -63,15 +55,15 @@ class RegistBookMark extends Component<RegistBookMarkProps> {
             </div>
             <div className="bookmark_data">
               <div className="data">이름</div>
-              <div className="data_value"><input type="text"/></div>
+              <div className="data_value"><input type="text" value={this.state.name} onChange={(e) => this.setState({name: e.target.value})}/></div>
             </div>
             <div className="bookmark_data">
               <div className="data">URL</div>
-              <div className="data_value"><input type="text" disabled={this.state.type === 'folder'}/></div>
+              <div className="data_value"><input type="text" disabled={this.state.type === 'folder'} value={this.state.url} onChange={(e) => this.setState({name: e.target.url})}/></div>
             </div>
             <div>
               <div className="layer_button" onClick={() => this.props.closeRegistLayer()}>취소</div>
-              <div className="layer_button" onClick={() => this.crawling()}>저장</div>
+              <div className="layer_button" onClick={() => this.insertBookMark}>저장</div>
             </div>
           </div>
         }

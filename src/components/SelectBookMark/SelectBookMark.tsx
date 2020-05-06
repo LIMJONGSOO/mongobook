@@ -4,6 +4,7 @@ import ButtonArea from './components/ButtonArea/ButtonArea';
 import BookMarkList from './components/BookMarkList/BookMarkList';
 import RegistBookMark from './components/RegistBookMark/RegistBookMark';
 import Footer from './components/Footer/Footer';
+import axios from "axios";
 import './SelectBookMark.scss';
 
 class SelectBookMark extends Component {
@@ -31,9 +32,19 @@ class SelectBookMark extends Component {
       bookmarkListType: 'list',
       bookmarkList: [],
     }
+
+    this.setState({bookmarkList: this.searchBookMark()});
   }
 
   componentDidMount() {
+  }
+
+  searchBookMark = async () => {
+    try {
+      return await axios.get("https://192.168.219.192:4000/api/board");
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   openRegistLayer = () => {
