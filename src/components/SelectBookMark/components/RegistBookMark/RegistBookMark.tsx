@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './RegistBookMark.scss';
 import axios from "axios";
-import cheerio from "cheerio";
 
 type RegistBookMarkProps = {
   openRegistlayer:boolean;
@@ -30,7 +29,14 @@ class RegistBookMark extends Component<RegistBookMarkProps> {
 
   insertBookMark = async () => {
     try {
-      return await axios.post("https://192.168.219.192:4000/api/board", {name: this.state.name, url: this.state.url});
+      const param = {
+        type: this.state.type,
+        name: this.state.name,
+        directory: this.state.directory,
+        url: this.state.url
+      }
+      return await axios.post("https://192.168.219.192:4000/api/bookmark", param)
+                    .then(() => this.props.closeRegistLayer());
     } catch (error) {
       console.error(error);
     }
@@ -59,11 +65,11 @@ class RegistBookMark extends Component<RegistBookMarkProps> {
             </div>
             <div className="bookmark_data">
               <div className="data">URL</div>
-              <div className="data_value"><input type="text" disabled={this.state.type === 'folder'} value={this.state.url} onChange={(e) => this.setState({name: e.target.url})}/></div>
+              <div className="data_value"><input type="text" disabled={this.state.type === 'folder'} value={this.state.url} onChange={(e) => this.setState({url: e.target.value})}/></div>
             </div>
             <div>
               <div className="layer_button" onClick={() => this.props.closeRegistLayer()}>취소</div>
-              <div className="layer_button" onClick={() => this.insertBookMark}>저장</div>
+              <div className="layer_button" onClick={() => this.insertBookMark()}>저장</div>
             </div>
           </div>
         }

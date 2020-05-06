@@ -2,14 +2,7 @@ import React, {Component} from 'react';
 import './OGTypeBookMark.scss';
 
 type OGTypeBookMarkProps = {
-  bookmarkList:Array<{
-    type:string;
-    title:string;
-    link:string;
-    og_img:string;
-    og_title:string;
-    og_desc:string;
-  }>;
+  bookmarkList:Array<any>;
 };
 
 

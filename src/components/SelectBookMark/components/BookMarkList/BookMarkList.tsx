@@ -7,14 +7,7 @@ type BookMarkListProps = {
   directory:string;
   directoryName:string;
   bookmarkListType:string;
-  bookmarkList:Array<{
-    type:string;
-    title:string;
-    link:string;
-    og_img:string;
-    og_title:string;
-    og_desc:string;
-  }>;
+  bookmarkList:Array<any>;
 };
 
 class BookMarkList extends Component<BookMarkListProps> {

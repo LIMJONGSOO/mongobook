@@ -7,20 +7,23 @@ import Footer from './components/Footer/Footer';
 import axios from "axios";
 import './SelectBookMark.scss';
 
+export interface BookMarkData  {
+  type:string;
+  name:string;
+  upperDirectory:string;
+  _id:string;
+  og_title:string;
+  og_description:string;
+  og_image:string;
+};
+
 class SelectBookMark extends Component {
   state : {
     openRegistlayer: boolean;
     directory: string;
     directoryName: string;
     bookmarkListType: string;
-    bookmarkList: Array<{
-      type:string;
-      title:string;
-      link:string;
-      og_img:string;
-      og_title:string;
-      og_desc:string;
-    }>,
+    bookmarkList: Array<BookMarkData>,
   }
 
   constructor(props: Readonly<{}>) {
@@ -32,16 +35,15 @@ class SelectBookMark extends Component {
       bookmarkListType: 'list',
       bookmarkList: [],
     }
-
-    this.setState({bookmarkList: this.searchBookMark()});
   }
 
   componentDidMount() {
+    this.setState({bookmarkList: this.searchBookMark()});
   }
 
   searchBookMark = async () => {
     try {
-      return await axios.get("https://192.168.219.192:4000/api/board");
+      return await axios.get("https://192.168.219.192:4000/api/bookmark");
     } catch (error) {
       console.error(error);
     }

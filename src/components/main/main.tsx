@@ -17,9 +17,10 @@ class Main extends Component {
   render() {
     return (
       <div className="main">
-        {!this.state.showSelectPage ?
+        {!this.state.showSelectPage &&
           <div className="main_page"><img className="logo" src={logo} alt="logo"></img></div>
-          :
+        }
+        {this.state.showSelectPage &&
           <SelectBookMark />
         }
       </div>

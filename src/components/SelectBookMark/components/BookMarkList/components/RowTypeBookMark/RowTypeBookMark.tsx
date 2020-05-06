@@ -2,14 +2,7 @@ import React, {Component} from 'react';
 import './RowTypeBookMark.scss';
 
 type RowTypeBookMarkProps = {
-  bookmarkList:Array<{
-    type:string;
-    title:string;
-    link:string;
-    og_img:string;
-    og_title:string;
-    og_desc:string;
-  }>;
+  bookmarkList:Array<any>;
 };
 
 class RowTypeBookMark extends Component<RowTypeBookMarkProps> {
@@ -19,11 +12,22 @@ class RowTypeBookMark extends Component<RowTypeBookMarkProps> {
   }
 
   componentDidMount() {
+    console.log(typeof(this.props.bookmarkList));
+    console.log(this.props.bookmarkList);
+    this.props.bookmarkList.map(() => {
+      console.log('test');
+    })
   }
   
   render() {
     return (
-      <div></div>
+      <div>
+        {this.props.bookmarkList.map((bookmark, idx) => (
+          <div>
+            {bookmark}
+          </div>
+        ))}
+      </div>
     )
   };
 }
