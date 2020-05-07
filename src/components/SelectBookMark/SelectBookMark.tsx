@@ -6,6 +6,7 @@ import RegistBookMark from './components/RegistBookMark/RegistBookMark';
 import Footer from './components/Footer/Footer';
 import axios from "axios";
 import './SelectBookMark.scss';
+import { throws } from 'assert';
 
 export interface BookMarkData  {
   date?: any;
@@ -47,7 +48,8 @@ class SelectBookMark extends Component {
 
   searchBookMark = async () => {
     try {
-      const bookmarkList = await axios.get("https://192.168.219.192:4000/api/bookmark/"+this.state.directory);
+      const directory = this.state.directory.split('/');
+      const bookmarkList = await axios.get("https://192.168.219.192:4000/api/bookmark/"+directory[directory.length - 1]);
       if (bookmarkList && bookmarkList.data) {
         this.setState({bookmarkList: bookmarkList.data});
       }
@@ -69,9 +71,23 @@ class SelectBookMark extends Component {
   }
 
   changedirectory = (directory:string | undefined, directoryName:string | undefined) => {
-    this.setState({directory, directoryName: this.state.directoryName + '/' + directoryName}, () => {
+    this.setState({directory: this.state.directory + '/' + directory, directoryName: this.state.directoryName + '/' + directoryName}, () => {
       this.searchBookMark();
     });
+  }
+
+  moveBackDirectory = () => {
+    const directorys = this.state.directory.split('/');
+    const directoryNames = this.state.directoryName.split('/');
+    if(directorys.length > 1){
+      directorys.pop();
+      directoryNames.pop();
+      const directory = directorys.join('/');
+      const directoryName = directoryNames.join('/');
+      this.setState({directory, directoryName}, () => {
+        this.searchBookMark();
+      });
+    }
   }
 
   render() {
@@ -94,7 +110,8 @@ class SelectBookMark extends Component {
           directoryName={this.state.directoryName}
           bookmarkListType={this.state.bookmarkListType}
           bookmarkList={this.state.bookmarkList}
-          changedirectory={this.changedirectory}/>
+          changedirectory={this.changedirectory}
+          moveBackDirectory={this.moveBackDirectory}/>
         <Footer />
       </>
     )
