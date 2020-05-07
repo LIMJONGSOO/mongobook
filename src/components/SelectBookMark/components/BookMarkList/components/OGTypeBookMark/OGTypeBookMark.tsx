@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import './OGTypeBookMark.scss';
+import {BookMarkData} from '../../../../SelectBookMark';
 
 type OGTypeBookMarkProps = {
-  bookmarkList:Array<any>;
+  bookmarkList:Array<BookMarkData>;
 };
 
 
@@ -18,6 +19,11 @@ class OGTypeBookMark extends Component<OGTypeBookMarkProps> {
   render() {
     return (
       <div>
+        {this.props.bookmarkList.map((bookmark, idx) => (
+          <div>
+            {bookmark.name}
+          </div>
+        ))}
       </div>
     )
   };

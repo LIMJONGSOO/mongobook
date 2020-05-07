@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 import './BookMarkList.scss';
 import RowTypeBookMark from  './components/RowTypeBookMark/RowTypeBookMark';
 import OGTypeBookMark from './components/OGTypeBookMark/OGTypeBookMark';
+import {BookMarkData} from '../../SelectBookMark';
 
 type BookMarkListProps = {
   directory:string;
   directoryName:string;
   bookmarkListType:string;
-  bookmarkList:Array<any>;
+  bookmarkList:Array<BookMarkData>;
 };
 
 class BookMarkList extends Component<BookMarkListProps> {

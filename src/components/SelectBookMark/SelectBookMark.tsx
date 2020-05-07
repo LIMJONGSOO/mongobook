@@ -7,7 +7,7 @@ import Footer from './components/Footer/Footer';
 import axios from "axios";
 import './SelectBookMark.scss';
 
-export interface BookMarkData  {
+export type BookMarkData = {
   type:string;
   name:string;
   upperDirectory:string;

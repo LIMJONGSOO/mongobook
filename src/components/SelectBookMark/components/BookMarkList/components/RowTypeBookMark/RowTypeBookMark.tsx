@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import './RowTypeBookMark.scss';
+import {BookMarkData} from '../../../../SelectBookMark';
 
 type RowTypeBookMarkProps = {
-  bookmarkList:Array<any>;
+  bookmarkList:Array<BookMarkData>;
 };
 
 class RowTypeBookMark extends Component<RowTypeBookMarkProps> {
@@ -24,7 +25,7 @@ class RowTypeBookMark extends Component<RowTypeBookMarkProps> {
       <div>
         {this.props.bookmarkList.map((bookmark, idx) => (
           <div>
-            {bookmark}
+            {bookmark.name}
           </div>
         ))}
       </div>
