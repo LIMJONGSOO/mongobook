@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/mongobook/static/css/main.956b6ef7.chunk.css",
-    "main.js": "/mongobook/static/js/main.70e0d49a.chunk.js",
-    "main.js.map": "/mongobook/static/js/main.70e0d49a.chunk.js.map",
+    "main.css": "/mongobook/static/css/main.7a84d1fc.chunk.css",
+    "main.js": "/mongobook/static/js/main.7ad9218f.chunk.js",
+    "main.js.map": "/mongobook/static/js/main.7ad9218f.chunk.js.map",
     "runtime-main.js": "/mongobook/static/js/runtime-main.9c1d5d49.js",
     "runtime-main.js.map": "/mongobook/static/js/runtime-main.9c1d5d49.js.map",
-    "static/js/2.bdd21696.chunk.js": "/mongobook/static/js/2.bdd21696.chunk.js",
-    "static/js/2.bdd21696.chunk.js.map": "/mongobook/static/js/2.bdd21696.chunk.js.map",
+    "static/js/2.14ab9d83.chunk.js": "/mongobook/static/js/2.14ab9d83.chunk.js",
+    "static/js/2.14ab9d83.chunk.js.map": "/mongobook/static/js/2.14ab9d83.chunk.js.map",
     "index.html": "/mongobook/index.html",
-    "precache-manifest.b639ea41d7ee3d5d5cdbc010cfbe99f9.js": "/mongobook/precache-manifest.b639ea41d7ee3d5d5cdbc010cfbe99f9.js",
+    "precache-manifest.8d9a40efa191d9baaead9d8a7b0b01a8.js": "/mongobook/precache-manifest.8d9a40efa191d9baaead9d8a7b0b01a8.js",
     "service-worker.js": "/mongobook/service-worker.js",
-    "static/css/main.956b6ef7.chunk.css.map": "/mongobook/static/css/main.956b6ef7.chunk.css.map",
-    "static/js/2.bdd21696.chunk.js.LICENSE.txt": "/mongobook/static/js/2.bdd21696.chunk.js.LICENSE.txt",
+    "static/css/main.7a84d1fc.chunk.css.map": "/mongobook/static/css/main.7a84d1fc.chunk.css.map",
+    "static/js/2.14ab9d83.chunk.js.LICENSE.txt": "/mongobook/static/js/2.14ab9d83.chunk.js.LICENSE.txt",
     "static/media/logo.png": "/mongobook/static/media/logo.f0d1b497.png"
   },
   "entrypoints": [
     "static/js/runtime-main.9c1d5d49.js",
-    "static/js/2.bdd21696.chunk.js",
-    "static/css/main.956b6ef7.chunk.css",
-    "static/js/main.70e0d49a.chunk.js"
+    "static/js/2.14ab9d83.chunk.js",
+    "static/css/main.7a84d1fc.chunk.css",
+    "static/js/main.7ad9218f.chunk.js"
   ]
 }
