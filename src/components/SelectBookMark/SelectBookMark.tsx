@@ -8,13 +8,17 @@ import axios from "axios";
 import './SelectBookMark.scss';
 
 export interface BookMarkData  {
-  type:string;
-  name:string;
-  upperDirectory:string;
-  _id:string;
-  og_title:string;
-  og_description:string;
-  og_image:string;
+  date?: any;
+  is_edited?: boolean;
+  type?:string;
+  name?:string;
+  upperDirectory?:string;
+  url?: string;
+  __v?: number;
+  _id?:string;
+  og_title?:string;
+  og_description?:string;
+  og_image?:string;
 };
 
 class SelectBookMark extends Component {
@@ -30,7 +34,7 @@ class SelectBookMark extends Component {
     super(props);
     this.state = {
       openRegistlayer: false,
-      directory: '',
+      directory: '0',
       directoryName: '',
       bookmarkListType: 'list',
       bookmarkList: [],
@@ -38,12 +42,15 @@ class SelectBookMark extends Component {
   }
 
   componentDidMount() {
-    this.setState({bookmarkList: this.searchBookMark()});
+    this.searchBookMark();
   }
 
   searchBookMark = async () => {
     try {
-      return await axios.get("https://192.168.219.192:4000/api/bookmark");
+      const bookmarkList = await axios.get("https://192.168.219.192:4000/api/bookmark/"+this.state.directory);
+      if (bookmarkList && bookmarkList.data) {
+        this.setState({bookmarkList: bookmarkList.data});
+      }
     } catch (error) {
       console.error(error);
     }
@@ -59,6 +66,12 @@ class SelectBookMark extends Component {
 
   changeListType = (type:string) => {
     this.setState({bookmarkListType: type});
+  }
+
+  changedirectory = (directory:string | undefined, directoryName:string | undefined) => {
+    this.setState({directory, directoryName: this.state.directoryName + '/' + directoryName}, () => {
+      this.searchBookMark();
+    });
   }
 
   render() {
@@ -80,7 +93,8 @@ class SelectBookMark extends Component {
           directory={this.state.directory}
           directoryName={this.state.directoryName}
           bookmarkListType={this.state.bookmarkListType}
-          bookmarkList={this.state.bookmarkList}/>
+          bookmarkList={this.state.bookmarkList}
+          changedirectory={this.changedirectory}/>
         <Footer />
       </>
     )

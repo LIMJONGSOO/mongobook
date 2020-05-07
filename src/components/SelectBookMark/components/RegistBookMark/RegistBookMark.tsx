@@ -32,7 +32,7 @@ class RegistBookMark extends Component<RegistBookMarkProps> {
       const param = {
         type: this.state.type,
         name: this.state.name,
-        directory: this.state.directory,
+        directory: this.state.directory ? this.state.directory : '0',
         url: this.state.url
       }
       return await axios.post("https://192.168.219.192:4000/api/bookmark", param)
@@ -51,7 +51,7 @@ class RegistBookMark extends Component<RegistBookMarkProps> {
             <div className="bookmark_data">
               <div className="data">구분</div>
               <div className="data_value">
-                <div className={"type_button " + (this.state.type === "folder" ? "active" : "")} onClick={() => this.setState({type:'folder'})}>폴더</div>
+                <div className={"type_button " + (this.state.type === "folder" ? "active" : "")} onClick={() => this.setState({type:'folder', url:''})}>폴더</div>
                 <div className={"type_button " + (this.state.type === "link" ? "active" : "")} onClick={() => this.setState({type:'link'})}>링크</div>
               </div>
             </div>
