@@ -25,7 +25,7 @@ class BookMarkList extends Component<BookMarkListProps> {
     return (
       <div className="bookmark_list">
         <div className="bookmark_list_area">
-          <div className="currenct_directory">{this.props.directoryName}</div>
+          <div className="currenct_directory">현재경로 : {this.props.directoryName}</div>
           {this.props.bookmarkListType === 'list' ? <RowTypeBookMark bookmarkList={this.props.bookmarkList} changedirectory={this.props.changedirectory}/> : <OGTypeBookMark bookmarkList={this.props.bookmarkList} changedirectory={this.props.changedirectory}/>}
         </div>
       </div>

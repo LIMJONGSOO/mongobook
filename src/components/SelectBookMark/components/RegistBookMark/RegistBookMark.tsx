@@ -47,7 +47,7 @@ class RegistBookMark extends Component<RegistBookMarkProps> {
       <>
         {this.props.openRegistlayer &&
           <div className="regist_bookmark_layer">
-            <div className="title">북마크 등록1</div>
+            <div className="title">북마크 등록</div>
             <div className="bookmark_data">
               <div className="data">구분</div>
               <div className="data_value">
