@@ -35,7 +35,7 @@ class OGTypeBookMark extends Component<OGTypeBookMarkProps> {
               <img src={bookmark.type === 'folder' ? folderIcon : bookmark.og_image} alt={bookmark.type}/>
             </div>
             <div className="text">
-              <div className="title">{bookmark.og_title}</div>
+              <div className="title">{bookmark.og_title ? bookmark.og_title : bookmark.name}</div>
               <div className="desc">{bookmark.og_description}</div>
             </div>
           </div>
