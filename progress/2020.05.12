@@ -1,0 +1,6 @@
+2020.05.12 화요일
+
+진행사항
+1. mongobook(FE), mongobookserver(BE) 개발
+2. mongobookserver - mongobook crud api, crawler 기능
+3. mongobookserer 를 heroku 무료호스팅 배포 설정 중
