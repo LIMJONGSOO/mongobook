@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6d9bc35d4d72130c7655a33fb6532627",
+    "revision": "65f9830cdbe4a6edc5e202e1fe52796a",
     "url": "/mongobook/index.html"
   },
   {
-    "revision": "afa1fec4524280d03caa",
+    "revision": "105bcaf80d96b1d1a589",
     "url": "/mongobook/static/css/main.7a84d1fc.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mongobook/static/js/2.14ab9d83.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "afa1fec4524280d03caa",
-    "url": "/mongobook/static/js/main.7ad9218f.chunk.js"
+    "revision": "105bcaf80d96b1d1a589",
+    "url": "/mongobook/static/js/main.58c14b83.chunk.js"
   },
   {
     "revision": "e2e342c4e6bb1e331ba1",
