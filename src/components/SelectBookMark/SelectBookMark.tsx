@@ -49,7 +49,7 @@ class SelectBookMark extends Component {
   searchBookMark = async () => {
     try {
       const directory = this.state.directory.split('/');
-      const bookmarkList = await axios.get("https://192.168.219.192:4000/api/bookmark/"+directory[directory.length - 1]);
+      const bookmarkList = await axios.get("https://mongobookserver.herokuapp.com/api/bookmark/"+directory[directory.length - 1]);
       if (bookmarkList && bookmarkList.data) {
         this.setState({bookmarkList: bookmarkList.data});
       }

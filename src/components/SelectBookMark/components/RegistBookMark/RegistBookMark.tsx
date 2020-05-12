@@ -35,7 +35,7 @@ class RegistBookMark extends Component<RegistBookMarkProps> {
         directory: this.state.directory ? this.state.directory : '0',
         url: this.state.url
       }
-      return await axios.post("https://192.168.219.192:4000/api/bookmark", param)
+      return await axios.post("https://mongobookserver.herokuapp.com/api/bookmark", param)
                     .then(() => this.props.closeRegistLayer());
     } catch (error) {
       console.error(error);
